@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "My Chrome Extension",
+    "name": "TabSense",
     "version": "1.0",
-    "description": "This is my first Chrome extension!",
+    "description": "Keep track of your Chrome experience.",
     "action": {
       "default_popup": "html/popup.html"
     },
