@@ -11,5 +11,8 @@
         "activeTab", 
         "scripting",
         "tabs"
-    ]
+    ],
+    "background": {
+        "service_worker": "service-worker.js"
+    }
 }
