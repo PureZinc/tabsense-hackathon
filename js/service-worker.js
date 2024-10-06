@@ -1,33 +1,54 @@
-const tabTimes = {}; 
-const maxTabLimit = 5; // Max tabs linit here for users 
-const tabTimeLimit = 10 * 60 * 1000; // 10 minutes 
+const tabTimes = {};
+const maxTabLimit = 5; // Max tabs linit here for users
+const tabTimeLimit = 10 * 60 * 1000; // 10 minutes
 
-// Make Something for update tab open time when tab is created
+chrome.tabs.onCreated.addListener((tab) => {
+  const startTime = Date.now();
+  tabTimes[tab.id] = startTime;
+  checktTabCount();
+});
 
+chrome.tabs.onRemoved.addListener((tabId) => {
+  delete tabTimes[tabId];
+  checktTabCount();
+});
 
+chrome.tabs.onActivated.addListener((activeInfo) => {
+  const tabId = activeInfo.tabId;
+  tabTimes[tabId] = Data.now(); // this will be for reset timer when tab will become active
+});
 
+setInterval(() => {
+  const currentTime = Data.now();
+  for (let tabId in tabTimes) {
+    const timeElapsed = currentTime - tabTimes[tabId];
+    if (timeElapsed > tabTimeLimit) {
+      notifyTabLimitExceeded(parseInt(tabId));
+    }
+  }
+}, 6000);
 
-
-
-//Do something for when remove tab time when tab is closed
-
-
-
-
-//if you switch between tabs then tab updates access time
-
-
-
-
-
-//Come up with away to check if any tabs have exceeded the time limit. So make it check every 1 min. 
-
-
-
-//Make away to Notif if a tab has been open way to long
-
-
-
-
-
-// To many Tabs bozo your pc going to die.... 
+function notifyTabLimitExceeded(tabId) {
+  chrome.Notifications.create({
+    type: "basic",
+    iconurl: "", //icon for this notification
+    title: "Tab Reminder",
+    message:
+      "A Tab has been open for more then 10 minutes. Consider closing or revisiting it",
+    priority: 2,
+  });
+}
+// To many Tabs bozo your pc going to die....
+function checktTabCount() {
+  chrome.tab.query({}, (tabs) => {
+    if (tabs.length > maxTabLimit) {
+      chrome.Notifications.create({
+        type: "basic",
+        iconurl: "", //icon for this notification
+        title:
+          "You have more then ${maxTabLimit} tabs open. Consider closing unused Tabs.",
+        proiority: 3,
+      });
+    }
+  });
+}
