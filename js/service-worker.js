@@ -46,7 +46,7 @@ function checktTabCount() {
         type: "basic",
         iconurl: "", //icon for this notification
         title:
-          "You have more then ${maxTabLimit} tabs open. Consider closing unused Tabs.",
+          "You have more then ${maxTabLimit} tabs open. Consider closing unused Tabs Bro!.",
         proiority: 3,
       });
     }
