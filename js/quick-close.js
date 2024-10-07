@@ -1,4 +1,4 @@
-const IDLE_TIME_LIMIT = 30 * 60 * 1000; // 30 minutes
+const IDLE_TIME_LIMIT = 3 * 1000; // 30 minutes
 
 function closeIdleAndDuplicateTabs() {
   chrome.tabs.query({}, (tabs) => {
@@ -14,7 +14,7 @@ function closeIdleAndDuplicateTabs() {
       //this is checking if any tab is idle (not interacted with for a while)
       const timeElapsed = Date.now() - tabTimes[tab.id];
       console.log(timeElapsed, "vs", IDLE_TIME_LIMIT);
-      if (timeElapsed > IDLE_TIME_LIMIT && !tab.active) {
+      if (tab && timeElapsed > IDLE_TIME_LIMIT && !tab.active) {
         chrome.tabs.remove(tab.id);
       }
     });
