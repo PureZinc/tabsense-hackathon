@@ -1,3 +1,4 @@
+// Define settings here
 let tabTimes = {};
 let maxTabLimit = 5;
 let tabTimeLimit = 10 * 60 * 1000;
@@ -68,8 +69,6 @@ function checkTabCount() {
         title: `You have more than ${maxTabLimit} tabs open.`,
         message: "Consider closing some unused Tabs Bro!.",
         priority: 1,
-      }, (notificationId) => {
-        console.log("Notification created with ID:", notificationId);
       });
     }
   });
