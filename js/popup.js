@@ -22,3 +22,12 @@ chrome.tabs.query({}, (tabs) => {
     const tabCount = tabs.length;
     document.getElementById('tabCount').textContent = `You have ${tabCount} open tabs.`;
 });
+
+//Quick Close Button
+document.getElementById("quickClose").addEventListener("click", () =>{
+    chrome.runtime.sendMessage({ action: "closeIdleTabs" }, (reponse) => {
+        if (reponse.status === "done") {
+            alert("All useless tabs has been Closed");
+        }
+    });
+});
