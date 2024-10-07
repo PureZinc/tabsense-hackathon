@@ -26,7 +26,7 @@ function closeIdleAndDuplicateTabs() {
 }
 
 //for lising for messages from popup.js 
-chrome.runtime.onMessage.addListenter((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "closeIdleTabs"){
         closeIdleAndDuplicateTabs();
         sendResponse({status: "done"})
