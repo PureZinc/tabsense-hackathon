@@ -4,17 +4,21 @@
     "version": "1.0",
     "description": "Keep track of your Chrome experience.",
     "action": {
-      "default_popup": "html/popup.html"
+      "default_popup": "html/popup.html",
+      "default_icon": {
+        "48": "assets/dot.png"
+      }
     },
     "permissions": [
         "storage", 
         "activeTab", 
         "scripting",
         "tabs",
-        "notifications"
+        "notifications",
+        "idle"
     ],
     "background": {
-        "service_worker": "js/service-worker.js"
+      "service_worker": "js/service-worker.js"
     },
     "icons": {
         "48": "assets/dot.png"

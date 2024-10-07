@@ -1,3 +1,6 @@
+importScripts("./js/quick-close.js")
+importScripts("./js/break-timer.js")
+
 // Basic Internal Functions
 const imgURL = (imgName) => chrome.runtime.getURL(`assets/${imgName}`); //Makes getting imgages easier.
 
@@ -91,7 +94,7 @@ function checkTabCount() {
         type: "basic",
         iconUrl: imgURL("dot.png"), //icon for this notification
         title: `You have more than ${maxTabLimit} tabs open.`,
-        message: "Consider closing some unused Tabs Bro!.",
+        message: "You’ve got so many tabs open, I’m surprised your browser hasn’t filed for a restraining order. Close them all and actually get something done!",
         priority: 1,
       });
     }
