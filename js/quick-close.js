@@ -1,4 +1,4 @@
-const IDLE_TIME_LIMIT = 3 * 1000; // 30 minutes
+const IDLE_TIME_LIMIT = 10 * 60 * 1000; // 10 minutes
 
 const removeTab = (tabId) => {
   chrome.tabs.remove(tabId);
