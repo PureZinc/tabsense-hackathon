@@ -1,4 +1,4 @@
-const BREAK_INITERVAL = 3 * 1000;
+const BREAK_INITERVAL = 30 * 60 * 1000; // 30 Minutes
 
 function startBreakTimer(){
     setInterval(() => {
@@ -9,7 +9,7 @@ function startBreakTimer(){
 function sendBreakNotification(){
     chrome.notifications.create({
         type: "basic",
-        iconUrl: imgURL("assets/dot.png"),
+        iconUrl: imgURL("dot.png"),
         title: `Take a Break!`,
         message: "You've been browsing for an hour. You should take a break and go touch grass",
         priority: 2,
