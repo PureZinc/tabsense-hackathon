@@ -31,3 +31,40 @@ document.getElementById("quickClose").addEventListener("click", () =>{
         }
     });
 });
+
+async function accessAI(promp) {
+    const API_URL = 'http://127.0.0.1:8000/api'; // Replace with hosted backend URL once deployed 
+
+    const data = {
+        content: promp
+    }
+
+    try {
+        const response = await fetch(`${API_URL}/chat/`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.statusText}`);
+        }
+
+        return await response.json();
+
+    } catch (error) {
+        return { response: 'Failed to connect to the server.' };
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const prompted = document.getElementById('input-text');
+    const response = document.getElementById('response');
+
+    document.getElementById('ask-btn').addEventListener('click', async () => {
+        const userInput = prompted.value;
+        response.innerHTML = 'Loading...';
+        const result = await accessAI(userInput);
+        response.innerHTML = result.response;
+    });
+});

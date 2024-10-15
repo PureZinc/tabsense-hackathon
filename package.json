@@ -1,0 +1,16 @@
+{
+  "name": "tabsense",
+  "version": "1.0.0",
+  "description": "1. Open Google Chrome.\r 2. Go to the Extensions page: chrome://extensions/.\r 3. Turn on Developer mode (toggle switch in the top right).\r 4. Click Load unpacked and select this project folder.",
+  "main": "html/popup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "langchain": "^0.3.2",
+    "openai": "^4.67.3"
+  }
+}

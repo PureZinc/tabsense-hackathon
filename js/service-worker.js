@@ -9,21 +9,6 @@ let tabTimes = {};
 let maxTabLimit = 5;
 let tabTimeLimit = 10 * 60 * 1000;
 
-// Tests
-
-// let testCount = 0
-// setInterval(() => {
-//   testCount += 1
-//   console.log(5*testCount, "Seconds have passed!")
-//   console.log("Tab Times: ", tabTimes)
-// }, 5000)
-
-// chrome.tabs.query({}, (tabs) => {
-//   tabs.forEach((tab) => {
-//     console.log(tab);
-//   });
-// });
-
 
 // Changes the max values as the settings change.
 function updateLimits() {
