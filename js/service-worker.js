@@ -1,5 +1,6 @@
 importScripts("./quick-close.js")
 importScripts("./break-timer.js")
+importScripts("./backend_auth.js")
 
 // Basic Internal Functions
 const imgURL = (imgName) => chrome.runtime.getURL(`assets/${imgName}`); //Makes getting imgages easier.

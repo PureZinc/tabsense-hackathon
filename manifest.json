@@ -14,7 +14,9 @@
         "activeTab", 
         "scripting",
         "tabs",
-        "notifications"
+        "notifications",
+        "cookies",
+        "identity"
     ],
     "host_permissions": [
       "https://www.googleapis.com/*"
