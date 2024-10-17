@@ -1,6 +1,5 @@
-/* General styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -67,7 +66,7 @@ header nav ul li a:hover {
 }
 
 #hero {
-    background: linear-gradient(135deg, #4CAF50, #087f23);
+    background: linear-gradient(135deg, #74C0FC, #013c69);
     color: white;
     padding: 100px 20px;
     text-align: center;
@@ -85,7 +84,7 @@ header nav ul li a:hover {
 
 .cta-button {
     background-color: white;
-    color: #4CAF50;
+    color: #74C0FC;
     padding: 10px 30px;
     text-decoration: none;
     font-size: 1.2rem;
@@ -158,7 +157,7 @@ footer {
 }
 
 footer a {
-    color: #4CAF50;
+    color: #74C0FC;
     text-decoration: none;
 }
 
