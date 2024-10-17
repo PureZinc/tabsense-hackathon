@@ -1,5 +1,5 @@
 body {
-    width: 250px;
+    width: 400px;
     font-family: 'Roboto', sans-serif;
     padding: 25px;
     background-color: #ffffff;
@@ -96,11 +96,11 @@ button:active {
     color: #2c3e50;
 }
 
-#response-history {
+#keywords {
     margin-top: 20px;
 }
 
-#history-container {
+#keyword-container {
     max-height: 150px;
     overflow-y: auto;
     border: 1px solid #ddd;
@@ -109,4 +109,10 @@ button:active {
     background-color: #fafafa;
     width: 100%;
     box-sizing: border-box;
+}
+
+#keyword-container span {
+    font-size: 15px;
+    color: blue;
+    text-transform: capitalize;
 }
